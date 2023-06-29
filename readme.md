@@ -1,4 +1,4 @@
-My dotfiles, with some heavy "[inspiration](https://github.com/mastermatt/myenv)" 
+My dotfiles, with some heavy [inspiration](https://github.com/mastermatt/myenv)
 
 ---
 
