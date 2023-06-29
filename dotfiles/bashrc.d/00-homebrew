@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+if [[ -r $HOME/.homebrew_github_api_token ]]; then
+    export HOMEBREW_GITHUB_API_TOKEN=$(cat $HOME/.homebrew_github_api_token)
+fi
+
+HOMEBREW="$(which brew 2>/dev/null)"
+
+if [ -n "$HOMEBREW" ] ; then
+    # Make sure brew path comes first so its executables
+    # are found before defaults.  Specifically helpful for
+    # php and other things already provided by OSX.
+    export PATH=`brew --prefix`/bin:`brew --prefix`/sbin:$PATH
+
+    ### rbenv ###
+    if which rbenv > /dev/null; then
+        export RBENV_ROOT=/usr/local/var/rbenv
+        eval "$(rbenv init -)";
+    fi
+
+    if [ -f `brew --prefix autoenv`/activate.sh ]; then
+        . `brew --prefix autoenv`/activate.sh
+    fi
+fi
