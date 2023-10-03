@@ -2,6 +2,9 @@
     name = Mike Kitzman
     email = mdkitzman@gmail.com
 
+# Create a local gitconfig file, that allows for stuff like this
+# [includeIf "gitdir:~/projects/work/"]
+#    path = ~/projects/work/.gitconfig
 [include]
     path = ~/.gitconfig_local
 
