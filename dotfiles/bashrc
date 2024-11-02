@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+### If Homebrew is installed, be sure to set it up
+if [ -f /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+OHMYPOSH="$(which brew 2>/dev/null)"
+### if oh-my-posh is installed, make sure to initialize it
+if [ -n "$OHMYPOSH" ] ; then
+    eval "$(oh-my-posh init zsh)"
+fi
+
 ### Include modules from .bashrc.d
 if [ -d ~/.bashrc.d ]; then
     for f in ~/.bashrc.d/*; do source $f; done

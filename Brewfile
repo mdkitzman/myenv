@@ -3,10 +3,8 @@
 
 cask_args appdir: '/Applications'
 
-tap "homebrew/cask"
 tap "buo/cask-upgrade"
 tap 'homebrew/bundle'
-tap 'homebrew/core'
 tap 'homebrew/services'
 tap "homebrew/cask-fonts"
 
@@ -23,6 +21,8 @@ mas "Microsoft PowerPoint", id: 462062816
 mas "Enpass - Password Manager", id: 732710998
 
 # cli utilities
+brew 'httpie'
+brew 'oh-my-posh'
 brew 'ack'
 brew 'bash-completion'
 brew 'coreutils'
