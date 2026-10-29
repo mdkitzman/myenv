@@ -12,12 +12,6 @@ tap "homebrew/cask-fonts"
 brew "mas"
 
 # install mac app store apps
-mas "Slack for Desktop", id: 803453959
-mas "Microsoft Word", id: 462054704      
-mas "Microsoft OneNote", id: 784801555   
-mas "Microsoft Outlook", id: 985367838   
-mas "Microsoft Excel", id: 462058435     
-mas "Microsoft PowerPoint", id: 462062816
 mas "Enpass - Password Manager", id: 732710998
 
 # cli utilities
@@ -30,6 +24,7 @@ brew 'gh'
 brew 'git'
 brew 'gnupg'
 brew 'gpg'
+brew 'gum'
 brew 'htop'
 brew 'hub'
 brew 'jq'

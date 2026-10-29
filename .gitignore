@@ -1,0 +1,8 @@
+# Only track the shared gum scripts; anything else dropped in there is local
+dotfiles/bashrc.d/gum_scripts/*
+!dotfiles/bashrc.d/gum_scripts/command.sh
+!dotfiles/bashrc.d/gum_scripts/demo.sh
+!dotfiles/bashrc.d/gum_scripts/README.md
+
+# Machine-local shell modules (still sourced, never committed)
+dotfiles/bashrc.d/XX*

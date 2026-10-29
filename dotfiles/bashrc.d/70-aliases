@@ -9,3 +9,6 @@ alias gits='git s'
 alias pr='git publish && git spr'
 
 alias npmreinstall='rm -f package-lock.json && rm -rf node_modules && NR_NATIVE_METRICS_NO_BUILD=true npm install'
+
+# Don't name this 'command' -- that shadows the shell builtin used by nvm, brew, etc.
+alias cmd='bash ~/.bashrc.d/gum_scripts/command.sh'
