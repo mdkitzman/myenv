@@ -10,7 +10,7 @@ if [[ -z "$default_branch" ]]; then
     default_branch=$(git config --get init.defaultBranch || echo "main")
 fi
 
-branch_name=$(git branch-name)
+branch_name=$(git branch --show-current)
 if [[ "$branch_name" == "$default_branch" ]]; then
     git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
     echo "Done!"

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export PATH="$HOME/.local/bin:$PATH"
 export PROMPT="%? %~: "
 export EDITOR='/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'
 

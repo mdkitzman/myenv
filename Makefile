@@ -3,6 +3,9 @@ RM = /bin/rm -rfv
 LN = /bin/ln -fs
 CP = /bin/cp -r
 
+# user-owned bin dir, so installing git commands doesn't need sudo
+BIN_DIR = $(HOME)/.local/bin
+
 all:
 	@echo ""
 	@echo "usage:"
@@ -25,8 +28,10 @@ install-git:
 	$(LN) $(realpath dotfiles/gitconfig) ~/.gitconfig
 	$(LN) $(realpath dotfiles/gitignore_global) ~/.gitignore_global
 	touch ~/.gitconfig_local
+	mkdir -p $(BIN_DIR)
 	for SOURCE in $(realpath git_commands)/*; do \
-		TARGET="/usr/local/bin/git-$$(basename $$SOURCE)"; \
+		TARGET="$(BIN_DIR)/git-$$(basename $$SOURCE)"; \
+		chmod +x $$SOURCE; \
 		$(RM) $$TARGET; \
 		$(LN) $$SOURCE $$TARGET; \
 	done
@@ -34,4 +39,4 @@ install-git:
 update:
 	git pull --verbose
 
-.PHONY: all install update
+.PHONY: all install install-bash install-git update
