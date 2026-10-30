@@ -34,7 +34,14 @@ brew 'wget'
 
 # general applications
 cask 'visual-studio-code'
-cask 'docker'
 
 # fonts
 cask 'font-fira-code'
+
+def load_brewfile(name)
+  path = File.join(__dir__, name)
+  instance_eval(File.read(path), path) if File.exist?(path)
+end
+
+# Load a work-specific Brewfile
+load_brewfile("Brewfile.work")

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#
+# removes all of the branches that are already merged into the default branch
+
+# origin/HEAD points at the remote's default branch (e.g. "origin/main")
+default_branch=$(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null)
+default_branch=${default_branch#origin/}
+if [[ -z "$default_branch" ]]; then
+    # no origin/HEAD; fall back to the configured default, then "main"
+    default_branch=$(git config --get init.defaultBranch || echo "main")
+fi
+
+branch_name=$(git branch-name)
+if [[ "$branch_name" == "$default_branch" ]]; then
+    git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+    echo "Done!"
+else
+    echo "Must be on $default_branch, not $branch_name!"
+fi

@@ -6,3 +6,6 @@ dotfiles/bashrc.d/gum_scripts/*
 
 # Machine-local shell modules (still sourced, never committed)
 dotfiles/bashrc.d/XX*
+
+# Work-specific Brewfile
+Brewfile.work
