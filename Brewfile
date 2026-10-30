@@ -1,12 +1,8 @@
-# brew tap homebrew/bundle
 # brew bundle
 
 cask_args appdir: '/Applications'
 
 tap "buo/cask-upgrade"
-tap 'homebrew/bundle'
-tap 'homebrew/services'
-tap "homebrew/cask-fonts"
 
 # mac app store installation
 brew "mas"
